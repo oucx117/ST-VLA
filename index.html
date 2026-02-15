@@ -415,6 +415,86 @@
   </div>
 </section>
 
+<section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered" style="margin-bottom: 30px;">Real-World Demos</h2>
+        
+        <div class="columns is-multiline is-centered">
+          
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e5.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e7.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e9.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <video controls autoplay loop muted playsinline width="100%">
+                  <source src="./static/videos/Real_world_demos/output_e10.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 <script>
   let demoData = [];
   
@@ -546,11 +626,13 @@
     );
 
     if (entry) {
-        // 1. 准备新地址
-        const src_b_rgb = entry.folder + "/baseline_rgb.gif";
-        const src_b_depth = entry.folder + "/baseline_depth.gif";
-        const src_o_rgb = entry.folder + "/ours_rgb.gif";
-        const src_o_depth = entry.folder + "/ours_depth.gif";
+        // 1. 准备新地址 (由于文件夹改名了，这里做个自动修正)
+        const folderPath = entry.folder.replace('/demos/', '/Simulation_demos/');
+        
+        const src_b_rgb = folderPath + "/baseline_rgb.gif";
+        const src_b_depth = folderPath + "/baseline_depth.gif";
+        const src_o_rgb = folderPath + "/ours_rgb.gif";
+        const src_o_depth = folderPath + "/ours_depth.gif";
 
         // 2. 显示“加载中”，并把旧图片变透明（避免闪烁）
         loader.style.display = 'block';
